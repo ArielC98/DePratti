@@ -1,51 +1,50 @@
 #include <iostream>
 using namespace std;
 
-double arr2[10];
-double arr[]={ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
-
-void numeros(double arr[]);
-void mitad(double arr[]);
+void numeros(double arreglo[]);
+void mitad(double arreglo[], double arreglo2[]);
 
 int main(){
 
-   numeros(arr);
-   mitad(arr);
+double arr[10], arr2[10];
+    numeros(arr);
+    mitad(arr, arr2);
 
-    for (int j=0; j<10 ; j++){
+    for (int i = 0; i < 10 ; i++){
 
-        cout << arr[j] << endl;
+        cout << arr[i] << endl;
+
+    }
+    for (int i = 0; i < 10; i++) {
+
+        cout << arr2[i] << endl;
 
     }
 
-    for (int k = 0; k < 10; k++){
-
-        cout << arr2[k] << endl;
-
-    }
     return 0;
 }
 
-void numeros(double arr[]){
+void numeros(double arreglo[]){
 
-    int numero, i=0;
+    int numero, i ;
+    
+    
 
-    while (!arr[9]) {
+    for (i = 0 ; i < 10 ; i++){
+        
+        numero = 50 + rand()%(101-50);
+        arreglo[i] = numero;
 
-        numero = rand();
-        if (numero >= 50 && numero <= 100) {
-            arr[i] = numero;
-            i++;
-        }
     }
+
 
 }
 
-void mitad(double arr[]){
+void mitad(double arreglo1[], double arreglo2[]){
 
-    for (int i = 10 ; i < 10 ; i++){
+    for(int i = 0 ; i < 10 ; i++){
 
-        arr2[i] = arr[i] * 0.5;
+        arreglo2[i] = arreglo1[i] / 2;
 
     }
 
